@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script>try{var s=JSON.parse(localStorage.getItem("style")||"{}"),m=s.theme||"auto";document.documentElement.dataset.mode=m==="auto"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m}catch(e){}</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,9 +20,16 @@
   <aside>
     <a class="brand" href="#home" id="brand"></a>
     <nav id="nav" aria-label="Main"><span class="ind" aria-hidden="true"></span></nav>
-    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+    <button class="theme" id="theme" type="button" aria-label="Customise appearance" aria-expanded="false">Style</button>
   </aside>
   <main id="view" tabindex="-1"></main>
+</div>
+<div class="panel" id="panel" role="dialog" aria-label="Customise appearance">
+  <div><label>Theme</label><div class="seg"><button type="button" data-v="auto">Auto</button><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button></div></div>
+  <div><label>Accent</label><div class="sw" id="sw"></div></div>
+  <div><label for="blur">Glass blur</label><input id="blur" type="range" min="0" max="40"></div>
+  <div><label for="rad">Roundness</label><input id="rad" type="range" min="0" max="36"></div>
+  <button class="ghost" id="reset" type="button">Reset to defaults</button>
 </div>
 <script src="app.js"></script>
 </body>
