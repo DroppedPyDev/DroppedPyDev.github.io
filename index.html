@@ -2,186 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Abhijith KS</title>
-<meta name="description" content="Personal website of Abhijith KS: projects, writing, resume and links.">
+<meta name="description" content="Personal website: projects, writing, resume and links.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#eef1f6; --panel:#ffffff; --ink:#16213a; --muted:#5b6784; --line:#d3d9e6; --accent:#2b44ff; --accent-ink:#ffffff;
-  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Source Serif 4",Georgia,serif;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#10162a;--panel:#18203a;--ink:#e8ecf8;--muted:#98a3c2;--line:#2a3558;--accent:#8c9bff;--accent-ink:#10162a}
-}
-:root[data-theme="dark"]{--bg:#10162a;--panel:#18203a;--ink:#e8ecf8;--muted:#98a3c2;--line:#2a3558;--accent:#8c9bff;--accent-ink:#10162a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 var(--body);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-underline-offset:3px}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.shell{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh;max-width:1100px;margin:0 auto}
-aside{position:sticky;top:0;align-self:start;height:100vh;padding:48px 32px;display:flex;flex-direction:column;gap:32px;border-right:1px solid var(--line)}
-.brand{font:700 28px/1.1 var(--display);letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-.brand small{display:block;margin-top:8px;font:400 15px/1.4 var(--body);color:var(--muted);letter-spacing:0}
-nav{display:flex;flex-direction:column;gap:4px}
-nav a{font:500 17px var(--display);color:var(--muted);text-decoration:none;padding:8px 12px;margin-left:-12px;border-radius:8px}
-nav a:hover{color:var(--ink)}
-nav a[aria-current="page"]{color:var(--accent-ink);background:var(--accent)}
-.theme{margin-top:auto;align-self:flex-start;font:500 14px var(--display);background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 14px;cursor:pointer}
-main{padding:56px 40px 96px;max-width:760px}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.15;margin:0}
-h1{font-size:clamp(34px,5vw,52px);margin-bottom:20px}
-h2{font-size:24px;margin:56px 0 16px}
-h3{font-size:20px}
-p{margin:0 0 1em;max-width:62ch}
-.lede{font-size:21px;color:var(--ink)}
-.muted{color:var(--muted)}
-.item{display:block;padding:20px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit}
-.item:last-child{border-bottom:1px solid var(--line)}
-.item:hover h3{color:var(--accent)}
-.item p{margin:6px 0 0;color:var(--muted);font-size:16px}
-.meta{font-size:14px;color:var(--muted)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.tags span{font:500 13px var(--display);border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
-.link{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;margin-bottom:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);font:500 19px var(--display)}
-.link:hover{border-color:var(--accent);color:var(--accent)}
-.link span{font:400 15px var(--body);color:var(--muted)}
-.job{margin-bottom:28px}
-.job .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.job ul{margin:8px 0 0;padding-left:20px}
-.btn{display:inline-block;font:500 16px var(--display);background:var(--accent);color:var(--accent-ink);padding:10px 20px;border-radius:10px;text-decoration:none}
-article h1{margin-bottom:8px}
-article p{max-width:64ch}
-.back{display:inline-block;margin-bottom:28px;font:500 15px var(--display);color:var(--muted);text-decoration:none}
-@media (max-width:820px){
-  .shell{display:block}
-  aside{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:20px;border-right:0;border-bottom:1px solid var(--line)}
-  .brand small{display:none}
-  nav{flex-direction:row;flex-wrap:wrap;gap:2px;order:3;width:100%}
-  nav a{margin-left:0;padding:6px 10px;font-size:16px}
-  .theme{margin-top:0}
-  main{padding:32px 20px 72px}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="pblur top" aria-hidden="true"></div>
+<div class="pblur bot" aria-hidden="true"></div>
 <div class="shell">
   <aside>
     <a class="brand" href="#home" id="brand"></a>
-    <nav id="nav" aria-label="Main"></nav>
-    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Switch theme</button>
+    <nav id="nav" aria-label="Main"><span class="ind" aria-hidden="true"></span></nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
   </aside>
   <main id="view" tabindex="-1"></main>
 </div>
-
-<script>
-/* ============ EDIT YOUR CONTENT HERE ============ */
-const SITE = {
-  name: "Abhijith KS",
-  tagline: "Developer and writer",
-  intro: "Hi, I’m Abhijith. I build software and write about what I learn along the way. This is where my projects, writing, resume and links live.",
-  about: "Replace this paragraph with a few sentences about what you do, what you care about, and what you’re working on now.",
-  email: "you@example.com",
-
-  projects: [
-    { title: "Project one", year: "2026", desc: "One sentence on what it does and who it’s for.", tags: ["Python", "API"], url: "https://github.com/your-username/project-one" },
-    { title: "Project two", year: "2025", desc: "One sentence on the problem it solves.", tags: ["Android", "Kotlin"], url: "https://github.com/your-username/project-two" },
-    { title: "Project three", year: "2025", desc: "One sentence on what makes it interesting.", tags: ["Web"], url: "https://github.com/your-username/project-three" }
-  ],
-
-  /* Add a post: copy one block, give it a unique slug. Body accepts HTML. */
-  posts: [
-    { slug: "hello-world", title: "Hello, world", date: "2026-11-05", summary: "Why I started this site and what to expect.",
-      body: "<p>This is your first post. Write in plain HTML paragraphs, or add <a href='#'>links</a>, lists and code blocks.</p><p>Edit it in <code>index.html</code>, commit, and GitHub Pages republishes the site.</p>" },
-    { slug: "second-post", title: "A second post", date: "2026-11-01", summary: "A short note on something you learned.",
-      body: "<p>Another placeholder post. Delete or replace it.</p>" }
-  ],
-
-  resume: {
-    pdf: "",  /* e.g. "resume.pdf" once you add the file to the repo */
-    experience: [
-      { role: "Job title", org: "Company", when: "2024 – Present", points: ["What you built or improved, with a concrete result.", "Another achievement."] },
-      { role: "Earlier role", org: "Company", when: "2022 – 2024", points: ["What you did and the outcome."] }
-    ],
-    education: [ { what: "Degree, Institution", when: "2018 – 2022" } ],
-    skills: ["Python", "JavaScript", "Android", "Linux", "Git"]
-  },
-
-  links: [
-    { label: "GitHub", note: "Code and projects", url: "https://github.com/your-username" },
-    { label: "LinkedIn", note: "Work history", url: "https://www.linkedin.com/in/your-username" },
-    { label: "Email", note: "Best way to reach me", url: "mailto:you@example.com" }
-  ]
-};
-/* ============ END OF CONTENT ============ */
-
-const $ = s => document.querySelector(s);
-const view = $("#view");
-const pages = [["home","Home"],["projects","Projects"],["writing","Writing"],["resume","Resume"],["links","Links"]];
-const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" });
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
-
-$("#brand").innerHTML = esc(SITE.name) + "<small>" + esc(SITE.tagline) + "</small>";
-$("#nav").innerHTML = pages.map(([id, label]) => `<a href="#${id}" data-p="${id}">${label}</a>`).join("");
-
-const projectItem = p => `<a class="item" href="${esc(p.url)}" target="_blank" rel="noopener">
-  <h3>${esc(p.title)} <span class="meta">${esc(p.year)}</span></h3><p>${esc(p.desc)}</p>
-  <div class="tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div></a>`;
-const postItem = p => `<a class="item" href="#post-${esc(p.slug)}"><h3>${esc(p.title)}</h3>
-  <p><span class="meta">${fmt(p.date)}</span><br>${esc(p.summary)}</p></a>`;
-const sortedPosts = () => [...SITE.posts].sort((a, b) => b.date.localeCompare(a.date));
-
-const routes = {
-  home: () => `<h1>${esc(SITE.name)}</h1><p class="lede">${esc(SITE.intro)}</p><p>${esc(SITE.about)}</p>
-    <p><a class="btn" href="mailto:${esc(SITE.email)}">Get in touch</a></p>
-    <h2>Recent projects</h2>${SITE.projects.slice(0, 2).map(projectItem).join("")}
-    <h2>Latest writing</h2>${sortedPosts().slice(0, 2).map(postItem).join("")}`,
-  projects: () => `<h1>Projects</h1><p class="muted">Things I’ve built. Each one links to its code.</p>${SITE.projects.map(projectItem).join("")}`,
-  writing: () => `<h1>Writing</h1>${sortedPosts().map(postItem).join("") || "<p>No posts yet.</p>"}`,
-  resume: () => { const r = SITE.resume; return `<h1>Resume</h1>
-    ${r.pdf ? `<p><a class="btn" href="${esc(r.pdf)}">Download PDF</a></p>` : ""}
-    <h2>Experience</h2>${r.experience.map(j => `<div class="job"><div class="row"><h3>${esc(j.role)}, ${esc(j.org)}</h3><span class="meta">${esc(j.when)}</span></div>
-      <ul>${j.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}
-    <h2>Education</h2>${r.education.map(e => `<div class="job"><div class="row"><h3>${esc(e.what)}</h3><span class="meta">${esc(e.when)}</span></div></div>`).join("")}
-    <h2>Skills</h2><div class="tags">${r.skills.map(s => `<span>${esc(s)}</span>`).join("")}</div>`; },
-  links: () => `<h1>Links</h1><p class="muted">Where to find me online.</p>${SITE.links.map(l => `<a class="link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}<span>${esc(l.note)}</span></a>`).join("")}`
-};
-
-function render() {
-  const hash = location.hash.slice(1) || "home";
-  let page = hash, html;
-  if (hash.startsWith("post-")) {
-    const p = SITE.posts.find(x => "post-" + x.slug === hash);
-    page = "writing";
-    html = p ? `<a class="back" href="#writing">← All writing</a><article><h1>${esc(p.title)}</h1><p class="meta">${fmt(p.date)}</p>${p.body}</article>`
-             : `<h1>Post not found</h1><p><a href="#writing">Back to all writing</a></p>`;
-    document.title = (p ? p.title : "Not found") + " · " + SITE.name;
-  } else {
-    if (!routes[hash]) { page = "home"; }
-    html = routes[page]();
-    document.title = page === "home" ? SITE.name : pages.find(x => x[0] === page)[1] + " · " + SITE.name;
-  }
-  view.innerHTML = html;
-  document.querySelectorAll("#nav a").forEach(a => a.toggleAttribute("aria-current", a.dataset.p === page) || a.removeAttribute("aria-current"));
-  document.querySelectorAll("#nav a").forEach(a => { if (a.dataset.p === page) a.setAttribute("aria-current", "page"); });
-  window.scrollTo(0, 0);
-}
-window.addEventListener("hashchange", render);
-render();
-
-/* Theme toggle (remembered per browser) */
-const root = document.documentElement;
-try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
-$("#theme").addEventListener("click", () => {
-  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = dark ? "light" : "dark";
-  try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
-});
-</script>
+<script src="app.js"></script>
 </body>
 </html>
