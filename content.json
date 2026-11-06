@@ -5,6 +5,16 @@
   "intro": "Hi, I’m Abhijith. I build software and write about what I learn along the way.",
   "about": "Replace this with a few sentences about what you do, what you care about, and what you’re working on now.",
   "email": "you@example.com",
+  "design": {
+    "theme": "auto",
+    "layout": "sidebar",
+    "align": "left",
+    "font": "editorial",
+    "accent": "#2f5bff",
+    "colors": ["#7aa2ff", "#ff9ad5", "#7fe8d0"],
+    "blur": 22,
+    "roundness": 24
+  },
   "projects": [
     { "title": "Project one", "year": "2026", "desc": "One sentence on what it does and who it’s for.", "tags": ["Python", "API"], "url": "https://github.com/your-username/project-one" },
     { "title": "Project two", "year": "2025", "desc": "One sentence on the problem it solves.", "tags": ["Android", "Kotlin"], "url": "https://github.com/your-username/project-two" },
@@ -28,6 +38,3 @@
   "links": [
     { "label": "GitHub", "note": "Code and projects", "url": "https://github.com/your-username" },
     { "label": "LinkedIn", "note": "Work history", "url": "https://www.linkedin.com/in/your-username" },
-    { "label": "Email", "note": "Best way to reach me", "url": "mailto:you@example.com" }
-  ]
-}
