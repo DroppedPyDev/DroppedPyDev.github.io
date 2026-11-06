@@ -21,6 +21,50 @@ document.querySelectorAll(".pblur").forEach(el => {
   el.innerHTML = layers.map(([b, e]) => `<i style="--b:${b}px;--e:${e}%;--d:${d}"></i>`).join("");
 });
 
+/* design settings: defaults < content.json "design" < visitor choices (Style panel) */
+const root = document.documentElement;
+const DEF = { accent: "#2f5bff", colors: ["#7aa2ff", "#ff9ad5", "#7fe8d0"], blur: 22, roundness: 24, font: "editorial", layout: "sidebar", align: "left", theme: "auto" };
+const FONTS = {
+  editorial: { d: '"Bricolage Grotesque"', b: '"Source Serif 4"', fb: "Georgia,serif" },
+  modern: { d: '"Plus Jakarta Sans"', b: '"Plus Jakarta Sans"', fb: "system-ui,sans-serif", url: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" },
+  mono: { d: '"Space Grotesk"', b: '"JetBrains Mono"', fb: "ui-monospace,monospace", url: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" }
+};
+let saved = {}; try { saved = JSON.parse(localStorage.getItem("style") || "{}"); } catch (e) {}
+const mq = matchMedia("(prefers-color-scheme: dark)");
+const panel = $("#panel"), styleBtn = $("#theme");
+const SW = ["#2f5bff", "#7c3aed", "#e11d74", "#f97316", "#0d9488", "#16a34a"];
+$("#sw").innerHTML = SW.map(c => `<button type="button" data-c="${c}" style="background:${c}" aria-label="Accent ${c}"></button>`).join("");
+
+function applyDesign() {
+  const c = { ...DEF, ...(SITE.design || {}), ...saved }, st = root.style;
+  st.setProperty("--accent-base", c.accent);
+  (c.colors || []).slice(0, 3).forEach((v, i) => st.setProperty("--b" + (i + 1), v));
+  st.setProperty("--blur", c.blur + "px"); st.setProperty("--r", c.roundness + "px");
+  root.dataset.layout = c.layout; root.dataset.align = c.align;
+  root.dataset.mode = c.theme === "auto" ? (mq.matches ? "dark" : "light") : c.theme;
+  const f = FONTS[c.font] || FONTS.editorial;
+  if (f.url && !document.querySelector(`link[data-f="${c.font}"]`)) { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = f.url; l.dataset.f = c.font; document.head.appendChild(l); }
+  st.setProperty("--display", f.d + ",system-ui,sans-serif"); st.setProperty("--body", f.b + "," + f.fb);
+  panel.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.v === c.theme));
+  panel.querySelectorAll(".sw button").forEach(b => b.classList.toggle("on", b.dataset.c.toLowerCase() === String(c.accent).toLowerCase()));
+  $("#blur").value = c.blur; $("#rad").value = c.roundness;
+  document.fonts?.ready.then(() => place(true));
+}
+function save(k, v) { saved[k] = v; try { localStorage.setItem("style", JSON.stringify(saved)); } catch (e) {} applyDesign(); }
+function togglePanel(open) { open = open ?? !panel.classList.contains("open"); panel.classList.toggle("open", open); panel.inert = !open; styleBtn.setAttribute("aria-expanded", open); }
+panel.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.v) save("theme", b.dataset.v); else if (b.dataset.c) save("accent", b.dataset.c);
+  else if (b.id === "reset") { saved = {}; try { localStorage.removeItem("style"); } catch (x) {} applyDesign(); }
+});
+$("#blur").addEventListener("input", e => save("blur", +e.target.value));
+$("#rad").addEventListener("input", e => save("roundness", +e.target.value));
+styleBtn.addEventListener("click", () => togglePanel());
+document.addEventListener("click", e => { if (!panel.contains(e.target) && !styleBtn.contains(e.target)) togglePanel(false); });
+addEventListener("keydown", e => { if (e.key === "Escape") togglePanel(false); });
+mq.addEventListener?.("change", applyDesign);
+panel.inert = true; applyDesign();
+
 $("#brand").innerHTML = esc(SITE.name) + "<small>" + esc(SITE.tagline) + "</small>";
 nav.insertAdjacentHTML("beforeend", pages.map(([id, l]) => `<a href="#${id}" data-p="${id}">${l}</a>`).join(""));
 
@@ -85,13 +129,5 @@ view.addEventListener("pointermove", e => {
   const r = t.getBoundingClientRect(); t.style.setProperty("--mx", e.clientX - r.left + "px"); t.style.setProperty("--my", e.clientY - r.top + "px");
 });
 
-/* theme toggle */
-const root = document.documentElement;
-try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
-$("#theme").addEventListener("click", () => {
-  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = dark ? "light" : "dark";
-  try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
-});
 
 }).catch(() => { document.getElementById("view").innerHTML = "<h1>Content not found</h1><p>Serve the site over http (GitHub Pages, or <code>python3 -m http.server</code> locally). Browsers block loading content.json from a plain file.</p>"; });
