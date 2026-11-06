@@ -1,0 +1,64 @@
+# Pages CMS configuration: https://pagescms.org
+media: media
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: content.json
+    format: json
+    fields:
+      - { name: name, label: Your name, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: status, label: Status badge (leave empty to hide), type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: about, label: About, type: text }
+      - { name: email, label: Email, type: string }
+      - name: projects
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: year, label: Year, type: string }
+          - { name: desc, label: Description, type: text }
+          - { name: tags, label: Tags, type: string, list: true }
+          - { name: url, label: Link, type: string }
+      - name: posts
+        label: Blog posts
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: date, label: Date, type: date }
+          - { name: summary, label: Summary, type: text }
+          - { name: body, label: Body (plain text, blank line between paragraphs), type: text }
+      - name: resume
+        label: Resume
+        type: object
+        fields:
+          - { name: pdf, label: PDF file name (for example resume.pdf), type: string }
+          - name: experience
+            label: Experience
+            type: object
+            list: true
+            fields:
+              - { name: role, label: Role, type: string }
+              - { name: org, label: Company, type: string }
+              - { name: when, label: Dates, type: string }
+              - { name: points, label: Highlights, type: string, list: true }
+          - name: education
+            label: Education
+            type: object
+            list: true
+            fields:
+              - { name: what, label: Degree and institution, type: string }
+              - { name: when, label: Dates, type: string }
+          - { name: skills, label: Skills, type: string, list: true }
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Name, type: string }
+          - { name: note, label: Short note, type: string }
+          - { name: url, label: URL, type: string }

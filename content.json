@@ -1,0 +1,33 @@
+{
+  "name": "Abhijith KS",
+  "tagline": "Developer and writer",
+  "status": "Open to new projects",
+  "intro": "Hi, I’m Abhijith. I build software and write about what I learn along the way.",
+  "about": "Replace this with a few sentences about what you do, what you care about, and what you’re working on now.",
+  "email": "you@example.com",
+  "projects": [
+    { "title": "Project one", "year": "2026", "desc": "One sentence on what it does and who it’s for.", "tags": ["Python", "API"], "url": "https://github.com/your-username/project-one" },
+    { "title": "Project two", "year": "2025", "desc": "One sentence on the problem it solves.", "tags": ["Android", "Kotlin"], "url": "https://github.com/your-username/project-two" },
+    { "title": "Project three", "year": "2025", "desc": "One sentence on what makes it interesting.", "tags": ["Web"], "url": "https://github.com/your-username/project-three" }
+  ],
+  "posts": [
+    { "title": "Hello, world", "date": "2026-11-05", "summary": "Why I started this site and what to expect.",
+      "body": "This is your first post. Write in plain text, with **bold**, *italics*, `code` and [links](https://example.com).\n\nLeave a blank line between paragraphs. Edit it from Pages CMS and publish with one save." },
+    { "title": "A second post", "date": "2026-11-01", "summary": "A short note on something you learned.",
+      "body": "Another placeholder post. Delete or replace it." }
+  ],
+  "resume": {
+    "pdf": "",
+    "experience": [
+      { "role": "Job title", "org": "Company", "when": "2024 – Present", "points": ["What you built or improved, with a concrete result.", "Another achievement."] },
+      { "role": "Earlier role", "org": "Company", "when": "2022 – 2024", "points": ["What you did and the outcome."] }
+    ],
+    "education": [ { "what": "Degree, Institution", "when": "2018 – 2022" } ],
+    "skills": ["Python", "JavaScript", "Android", "Linux", "Git"]
+  },
+  "links": [
+    { "label": "GitHub", "note": "Code and projects", "url": "https://github.com/your-username" },
+    { "label": "LinkedIn", "note": "Work history", "url": "https://www.linkedin.com/in/your-username" },
+    { "label": "Email", "note": "Best way to reach me", "url": "mailto:you@example.com" }
+  ]
+}
