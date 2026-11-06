@@ -38,3 +38,6 @@
   "links": [
     { "label": "GitHub", "note": "Code and projects", "url": "https://github.com/your-username" },
     { "label": "LinkedIn", "note": "Work history", "url": "https://www.linkedin.com/in/your-username" },
+    { "label": "Email", "note": "Best way to reach me", "url": "mailto:you@example.com" }
+  ]
+}
